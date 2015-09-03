@@ -152,7 +152,7 @@ func NewProxyHttpServer() *ProxyHttpServer {
 		respHandlers:  []RespHandler{},
 		httpsHandlers: []HttpsHandler{},
 		NonproxyHandler: http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-			http.Error(w, "This is a proxy server. Does not respond to non-proxy requests.", 500)
+			http.Error(w, "It worked.", 500)
 		}),
 		Tr: &http.Transport{TLSClientConfig: tlsClientSkipVerify,
 			Proxy: http.ProxyFromEnvironment},
